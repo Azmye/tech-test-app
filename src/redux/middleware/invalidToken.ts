@@ -7,10 +7,9 @@ const invalidToken: Middleware<{}, RootState> =
     const result = next(action);
 
     if (isRejectedWithValue(action)) {
-      const { err_code } = action.payload as { err_code?: string };
+      const { status } = action.payload as { status: number };
 
-      if (err_code === "403") {
-        console.log(err_code);
+      if (status === 403) {
         store.dispatch(setLogout());
       }
     }

@@ -23,7 +23,7 @@ export default function ChallengeLayout() {
           <h5>{user?.detail.fullname}</h5>
         </div>
 
-        <nav className="w-full p-2">
+        <nav className="w-full p-2 flex flex-col gap-2">
           <NavLink
             to={"/challenge/dashboard"}
             className={({ isActive }) =>
@@ -35,6 +35,18 @@ export default function ChallengeLayout() {
             }
           >
             Dashboard
+          </NavLink>
+          <NavLink
+            to={"/challenge/transaction"}
+            className={({ isActive }) =>
+              `${
+                isActive
+                  ? "bg-blue-500 text-white"
+                  : "bg-neutral-100 text-neutral-500"
+              } w-full inline-block p-2 rounded-md`
+            }
+          >
+            Transaction
           </NavLink>
         </nav>
 
@@ -64,7 +76,7 @@ export default function ChallengeLayout() {
           </button>
 
           <div className="bg-gray-800 text-white p-2">
-            <h5>Test MKSolusi</h5>
+            <h5>Test MKSolusi - Muhammad Azmi</h5>
           </div>
         </div>
       </div>

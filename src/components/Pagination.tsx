@@ -84,9 +84,9 @@ export const Pagination = ({
       </div>
 
       <div>
-        <ul className="flex border border-blue-950 rounded-md">
+        <ul className="flex border border-blue-500 rounded-md">
           <li
-            className="border-r border-r-blue-950 w-14 py-1 px-2 flex items-center justify-center cursor-pointer"
+            className="border-r border-r-blue-500 w-14 py-1 px-2 flex items-center justify-center cursor-pointer"
             onClick={handlePreviousPage}
           >
             <FaAngleLeft />
@@ -95,15 +95,15 @@ export const Pagination = ({
             pageNumber === "..." ? (
               <li
                 key={index}
-                className="border-r border-blue-950 w-10 py-1 px-2 flex items-center justify-center"
+                className="border-r border-blue-500 w-10 py-1 px-2 flex items-center justify-center"
               >
                 ...
               </li>
             ) : (
               <li
                 key={index}
-                className={`border-r border-blue-950 w-10 py-1 px-2 flex items-center justify-center cursor-pointer ${
-                  page === pageNumber ? "bg-blue-950 text-white" : ""
+                className={`border-r border-blue-500 w-10 py-1 px-2 flex items-center justify-center cursor-pointer ${
+                  page === pageNumber ? "bg-blue-500 text-white" : ""
                 }`}
                 onClick={() => onChangePage(pageNumber as number)}
               >

@@ -8,6 +8,8 @@ import ContactPage from "../app/contact/ContactPage";
 import ChallengeLayout from "../app/challenge/ChallengeLayout";
 import ChallengeDashboardPage from "../app/challenge/dashboard/ChallengeDashboardPage";
 import ChallengeProfilePage from "../app/challenge/profile/ChallengeProfilePage";
+import ChallengeTransactionPage from "../app/challenge/transaction/ChallengeTransactionPage";
+import TransactionDetails from "../app/challenge/transaction/TransactionDetails";
 
 export function Router() {
   return useRoutes([
@@ -49,6 +51,14 @@ export function Router() {
         {
           path: "/challenge/profile",
           element: <ChallengeProfilePage />,
+        },
+        {
+          path: "/challenge/transaction",
+          element: <ChallengeTransactionPage />,
+        },
+        {
+          path: "/challenge/transaction/:id/details",
+          element: <TransactionDetails />,
         },
       ],
     },

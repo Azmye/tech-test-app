@@ -7,8 +7,8 @@ interface LoginRequest {
 }
 
 const loginApi = apiRoot.injectEndpoints({
-  endpoints: (build) => ({
-    login: build.mutation<ILoginResponse, LoginRequest>({
+  endpoints: (builder) => ({
+    login: builder.mutation<ILoginResponse, LoginRequest>({
       query: (credentials) => ({
         url: "/api/auth/login",
         method: "POST",
