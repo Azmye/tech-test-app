@@ -1,50 +1,48 @@
-# React + TypeScript + Vite
+# MKSolusi - Frontend test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📚 Get started
 
-Currently, two official plugins are available:
+1. Install dependencies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+   ```bash
+   npm install or yarn
+   ```
 
-## Expanding the ESLint configuration
+2. Start the app
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   ```bash
+    yarn dev or npm run dev
+   ``
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+## 📚 Get started Using Docker
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Pre-Requisites
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Docker
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. build the project to docker
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+   ```bash
+    docker build -t test-mksolusi .
+   ``
+   ```
+
+2. Start the app
+
+   ```bash
+    docker run -p  your_port:your_port --env PORT=your_project_port --env HOST=your_project_port test-mksolusi
+   ``
+   ```
+
+## 👷 Core library to build this app
+
+- Redux Toolkit & Query
+- React Icons
+- TailwindCss
+- React-Router-Dom
+
+## 🔎 About
+
+- `React`: `18.3.1`
+- `NodeJs`: `20+`
