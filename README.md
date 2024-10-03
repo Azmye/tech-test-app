@@ -25,14 +25,14 @@
 
    ```bash
     docker build -t test-mksolusi .
-   ``
+
    ```
 
 2. Start the app
 
    ```bash
     docker run -p  your_port:your_port --env PORT=your_project_port --env HOST=your_project_port test-mksolusi
-   ``
+
    ```
 
 ## 👷 Core library to build this app
