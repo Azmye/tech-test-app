@@ -1,15 +1,20 @@
 import { FaUserCircle } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
-import { useSelector } from "../../redux/store";
+import { dispatch, useSelector } from "../../redux/store";
 import { FaUser } from "react-icons/fa6";
 import { CiLogout } from "react-icons/ci";
+import { setLogout } from "../../redux/slices/auth";
 
 export default function ChallengeLayout() {
   const { user } = useSelector((state) => state.auth);
 
+  const handleLogout = () => {
+    dispatch(setLogout());
+  };
+
   return (
     <div className="flex flex-row">
-      <div className="w-2/12 shadow-md h-dvh flex flex-col">
+      <div className="w-2/12 shadow-md h-dvh max-h-dvh flex flex-col">
         <div className="mt-5 flex flex-col items-center border-b ">
           <span className="text-sky-500">
             <FaUserCircle fontSize={150} />
@@ -38,8 +43,8 @@ export default function ChallengeLayout() {
             to={"/challenge/profile"}
             className={({ isActive }) =>
               `${
-                isActive ? " text-blue-500" : "bg-neutral-100 text-neutral-500"
-              } w-full p-2 rounded-md flex items-center gap-2`
+                isActive ? " text-blue-500" : "text-neutral-500"
+              } bg-neutral-100  w-full p-2 rounded-md flex items-center gap-2`
             }
           >
             <span>
@@ -48,19 +53,15 @@ export default function ChallengeLayout() {
             Profile
           </NavLink>
 
-          <NavLink
-            to={"/challenge/profile"}
-            className={({ isActive }) =>
-              `${
-                isActive ? " " : "bg-neutral-100 text-neutral-500"
-              } w-full p-2 rounded-md flex items-center gap-2`
-            }
+          <button
+            onClick={() => handleLogout()}
+            className={`bg-neutral-100 text-neutral-500 w-full p-2 rounded-md flex items-center gap-2 hover:text-red-500`}
           >
             <span>
               <CiLogout />
             </span>
             Logout
-          </NavLink>
+          </button>
 
           <div className="bg-gray-800 text-white p-2">
             <h5>Test MKSolusi</h5>
