@@ -32,7 +32,7 @@ const SERVICES = [
 
 export default function Page() {
   return (
-    <div className="container">
+    <div className="">
       <section className="h-dvh bg-no-repeat bg-cover bg-[url('https://mksolusi.id/wp-content/uploads/2019/07/software-development-1.jpg')]">
         <h1 className="mx-auto max-w-7xl text-7xl text-white pt-48">
           PT Multi Karya Solusi

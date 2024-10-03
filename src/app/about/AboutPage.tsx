@@ -45,7 +45,7 @@ export default function AboutPage() {
   const { pathname } = useLocation();
 
   return (
-    <div className="container">
+    <div className="">
       <section className="pt-28 pb-5 bg-neutral-200">
         <div className="mx-auto max-w-7xl flex flex-row justify-between py-2">
           <h5 className="text-xl">About</h5>

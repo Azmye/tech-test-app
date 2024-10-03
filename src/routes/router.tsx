@@ -5,6 +5,9 @@ import LoginPage from "../app/auth/LoginPage";
 import AuthGuard from "../guards/AuthGuard";
 import AboutPage from "../app/about/AboutPage";
 import ContactPage from "../app/contact/ContactPage";
+import ChallengeLayout from "../app/challenge/ChallengeLayout";
+import ChallengeDashboardPage from "../app/challenge/dashboard/ChallengeDashboardPage";
+import ChallengeProfilePage from "../app/challenge/profile/ChallengeProfilePage";
 
 export function Router() {
   return useRoutes([
@@ -27,6 +30,25 @@ export function Router() {
         {
           path: "/contact",
           element: <ContactPage />,
+        },
+      ],
+    },
+    {
+      path: "/challenge",
+      element: (
+        <AuthGuard>
+          <ChallengeLayout />
+        </AuthGuard>
+      ),
+      children: [
+        {
+          index: true,
+          path: "/challenge/dashboard",
+          element: <ChallengeDashboardPage />,
+        },
+        {
+          path: "/challenge/profile",
+          element: <ChallengeProfilePage />,
         },
       ],
     },

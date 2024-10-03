@@ -51,6 +51,12 @@ export default function Layout() {
             >
               Contact
             </Link>
+            <Link
+              to={"/challenge"}
+              className="text-sm hover:text-blue-800 cursor-pointer"
+            >
+              Challenge
+            </Link>
           </ul>
         </div>
       </nav>
