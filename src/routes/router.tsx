@@ -10,6 +10,7 @@ import ChallengeDashboardPage from "../app/challenge/dashboard/ChallengeDashboar
 import ChallengeProfilePage from "../app/challenge/profile/ChallengeProfilePage";
 import ChallengeTransactionPage from "../app/challenge/transaction/ChallengeTransactionPage";
 import TransactionDetails from "../app/challenge/transaction/TransactionDetails";
+import ChallengePage from "../app/challenge/ChallengePage";
 
 export function Router() {
   return useRoutes([
@@ -45,6 +46,9 @@ export function Router() {
       children: [
         {
           index: true,
+          element: <ChallengePage />,
+        },
+        {
           path: "/challenge/dashboard",
           element: <ChallengeDashboardPage />,
         },
